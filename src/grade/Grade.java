@@ -1,5 +1,5 @@
 
-//By: Nopanond Ch.
+//By: Nopanond Ch.  test
 package grade;
 
 import java.util.Scanner;
