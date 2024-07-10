@@ -1,5 +1,5 @@
 
-//By: Nopanond Ch. 1
+//ใส่ชื่อนักศึกษาที่นี่
 package grade;
 
 import java.util.Scanner;
