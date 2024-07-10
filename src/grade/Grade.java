@@ -2,6 +2,7 @@
 //By: Nopanond Ch.  test  aaaa1
 ///1
 //2
+//3
 package grade;
 
 import java.util.Scanner;
