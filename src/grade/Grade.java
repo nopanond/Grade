@@ -6,51 +6,57 @@ import java.util.Scanner;
 
 public class Grade {
 	public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        int numOfSubjects = 2;
-        String[] subjectNames = {"ภาษาไทย", "กีฬา", "คอมพิวเตอร์"};
-        int[] credits = new int[numOfSubjects];
+		Scanner input = new Scanner(System.in);
+        //สร้างตัวแปรเพื่อเก็บจำนวนข้อมูลผู้เรียน
+
+        //ปรับให้ตัวแปรเก็บข้อมูลแบบอาร์เรย์
+        String subjectNames = "ภาษาไทย" ; //ปรับให้รับได้หลายวิชา
+        int credits ;
         int totalCredit = 0;
-        double[] assignmentScores = new double[numOfSubjects];
-        double[] examScores = new double[numOfSubjects];
-        double[] participationScores = new double[numOfSubjects];
+        double assignmentScores ;
+        double examScores ;
+        double participationScores ;
         double totalScore = 0;
+        ///
 
-        for (int i = 0; i < numOfSubjects; i++) {
-        	System.out.println("วิชา" + subjectNames[i]);
-        	
-            System.out.print("จำนวนหน่วยกิต: ");
-            credits[i] = input.nextInt();
-            totalCredit += credits[i];
+        //สร้าง Loop ให้เก็บข้อมูลผู้เรียนตามจำนวนที่กำหนด
 
-            System.out.print("คะแนนผลงาน: ");
-            assignmentScores[i] = input.nextDouble();
+        System.out.println("วิชา" + subjectNames);
 
-            System.out.print("คะแนนสอบ: ");
-            examScores[i] = input.nextDouble();
+        System.out.print("จำนวนหน่วยกิต: ");
+        credits = input.nextInt();
+        totalCredit += credits;
 
-            System.out.print("คะแนนจิตพิสัย: ");
-            participationScores[i] = input.nextDouble();
-            
-            System.out.println("--------------------");
-        }
-        
+        System.out.print("คะแนนผลงาน: ");
+        assignmentScores = input.nextDouble();
+
+        System.out.print("คะแนนสอบ: ");
+        examScores = input.nextDouble();
+
+        System.out.print("คะแนนจิตพิสัย: ");
+        participationScores = input.nextDouble();
+        ///          
+        System.out.println("--------------------");
+
+
+
         System.out.println("ผลลัพธ์");
         System.out.println("===============");
-        
 
-        for (int i = 0; i < numOfSubjects; i++) {
-            totalScore = assignmentScores[i] + examScores[i] + participationScores[i];
-            String grade = calculateGrade(totalScore);
+        //สร้าง Loop ให้แสดงผลลัพธ์ของข้อมูลผู้เรียน ตามที่กำหนด
 
-            System.out.println("คะแนนวิชา " + subjectNames[i] + ": " + totalScore);
-            System.out.println("เกรดวิชา " + subjectNames[i] + ": " + grade);
-            System.out.println("--------------------");
-        }
-        
-        double GPA = 0;
+        totalScore = assignmentScores + examScores + participationScores;
+        String grade = calculateGrade(totalScore);
+
+        System.out.println("คะแนนวิชา " + subjectNames + ": " + totalScore);
+        System.out.println("เกรดวิชา " + subjectNames + ": " + grade);
+        System.out.println("--------------------");
+
+
+        // เขียนสูตรในการคำนวณเกรด 
+        // double GPA = ;
         System.out.println("===============");
-        System.out.println("เกรดเฉลี่ย: " + GPA);
+        System.out.println("เกรดเฉลี่ย: " );
         System.out.println("===============");
 
         input.close();
