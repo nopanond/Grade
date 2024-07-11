@@ -46,7 +46,7 @@ public class Grade {
         //สร้าง Loop ให้แสดงผลลัพธ์ของข้อมูลผู้เรียน ตามที่กำหนด
 
         totalScore = assignmentScores + examScores + participationScores;
-        String grade = calculateGrade(totalScore);
+        double grade = calculateGrade(totalScore);
 
         System.out.println("คะแนนวิชา " + subjectNames + ": " + totalScore);
         System.out.println("เกรดวิชา " + subjectNames + ": " + grade);
@@ -62,17 +62,17 @@ public class Grade {
         input.close();
 
 }
-    public static String calculateGrade(double score) {
+    public static double calculateGrade(double score) {
         if (score >= 80) {
-            return "4.0 (A)";
+            return 4.0;
         } else if (score >= 70) {
-            return "3.0 (B)";
+            return 3.0;
         } else if (score >= 60) {
-            return "2.0 (C)";
+            return 2.0;
         } else if (score >= 50) {
-            return "1.0 (D)";
+            return 1.0;
         } else {
-            return "0 (F)";
+            return 0;
         }
     }
 }
